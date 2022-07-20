@@ -40,6 +40,14 @@ const userSchema = mongoose.Schema({
     image: {
         url: { type: String },
         public_id: { type: String }
+    },
+    country: {
+        type: mongoose.Types.ObjectId,
+        required: true
+    },
+    city: {
+        type: mongoose.Types.ObjectId,
+        required: true
     }
 })
 
@@ -50,7 +58,9 @@ userSchema.methods.genAuthToken = function(){
         email: this.email, 
         countryCode: this.countryCode,
         phoneNumber: this.phoneNumber,
-        verified: this.verified
+        verified: this.verified,
+        city: this.city,
+        country: this.country
     },process.env.JWT_SECRET, { expiresIn: "15d" });
     return token;
 }

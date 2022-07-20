@@ -1,5 +1,5 @@
 const handleRouteErrors = require("../../handleRouteErrors");
-const Category = require("../../models/Category");
+const Category = require("../../models/category");
 const redis = require("../../init/redis");
 
 const getCategory = handleRouteErrors(async(req,res)=>{

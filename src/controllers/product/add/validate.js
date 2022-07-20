@@ -32,18 +32,18 @@ const validate = (body) => {
             .min(10, "Description must have at least 10 characters")
             .max(500,"Description mustn't have more than 500 characters")
             .required("You've not provided the description"),
-        country: yup
-            .string("Country id has to be a string")
-            .required("You've not provided the country id"),
-        city: yup
-            .string("City id has to be a string")
-            .required("You've not provided the city id"),
         longitude: yup
             .number("Longitude has to be a number")
             .required("You've not provided the longitude"),
         latitude: yup
             .number("Latitude has to be a number")
-            .required("You've not provided the latitude")
+            .required("You've not provided the latitude"),
+        category: yup
+            .string("Category has to be a string")
+            .required("You've not provided the category"),
+        subCategory: yup
+            .string("Category has to be a string")
+            .required("You've not provided the subCategory")
     });
     return schema.validate(body);
 }
